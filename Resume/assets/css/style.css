@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap');
+
+:root {
+    --color-body: #d3e0e4;
+    --color-heading: #f4faff;
+    --color-base: #0a2e36;
+    --color-base2: #08222a;
+    --color-accent: #ff6f61;
+    --color-accent-hover: #ff8578;
+    --sidebar-width: 250px;
+    --font-base: "Nunito", sans-serif;
+}
+
+body {
+    background-color: var(--color-base2);
+    color: var(--color-body);
+    font-family: var(--font-base);
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-heading);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease-in-out;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-body);
+    transition: color 0.4s ease-in-out;
+}
+
+a:hover {
+    color: var(--color-accent);
+}
+
+img {
+    width: 100%;
+    transition: transform 0.4s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+.text-brand {
+    color: var(--color-accent);
+}
+
+.bg-base {
+    background-color: var(--color-base);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.bg-base:hover {
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.full-height {
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.shadow-effect {
+    transition: all 0.5s ease-in-out;
+}
+
+.shadow-effect:hover {
+    box-shadow: -8px 8px 0 0 var(--color-accent);
+}
+
+.iconbox {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    background-color: var(--color-accent);
+    color: var(--color-base);
+    border-radius: 50%;
+    transition: background-color 0.4s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.iconbox:hover {
+    background-color: var(--color-accent-hover);
+    transform: rotate(15deg);
+}
+
+.two-row {
+    margin-top: 2%;
+}
+
+/* NAVBAR ------------------------------------------*/
+
+.navbar {
+    background-color: var(--color-base);
+    padding: 15px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.navbar .nav-link {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 1px;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar .nav-link:hover {
+    color: var(--color-accent);
+}
+
+.navbar .nav-link.active {
+    color: var(--color-accent);
+}
+
+@media (min-width:992px) {
+    .navbar {
+        min-height: 100vh;
+        width: var(--sidebar-width);
+        background: linear-gradient(rgba(10, 46, 54, 0.9), rgba(10, 46, 54, 0.9)), url(../images/sidebar-img.jpg);
+        background-size: cover;
+        background-position: center;
+        transition: width 0.3s ease-in-out;
+    }
+
+    .navbar:hover {
+        width: calc(var(--sidebar-width) + 20px);
+    }
+
+    .navbar-brand img {
+        border: 10px solid var(--color-accent);
+        border-radius: 50%;
+        transition: border-color 0.4s ease-in-out;
+    }
+
+    .navbar-brand img:hover {
+        border-color: var(--color-accent-hover);
+    }
+
+    #content-wrapper {
+        padding-left: var(--sidebar-width);
+        transition: padding-left 0.3s ease-in-out;
+    }
+
+    #content-wrapper:hover {
+        padding-left: calc(var(--sidebar-width) + 20px);
+    }
+}
+
+/* BUTTONS -------------------------------*/
+
+.btn {
+    padding: 14px 30px;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.btn-accent {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-base);
+}
+
+.btn-accent:hover,
+.btn-accent:focus {
+    background-color: var(--color-accent-hover);
+    color: var(--color-base);
+    border-color: var(--color-accent-hover);
+    transform: scale(1.05);
+}
+
+.link-custom {
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+.link-custom::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: var(--color-accent);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: width 0.4s ease-in-out;
+}
+
+.link-custom:hover::after {
+    width: 100%;
+}
+
+/* CARD */
+.card-custom {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.card-custom:hover {
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+}
+
+.card-custom .card-custom-image {
+    overflow: hidden;
+}
+
+.card-custom .card-custom-image img {
+    transition: all 0.4s ease-in-out;
+}
+
+.card-custom:hover .card-custom-image img {
+    transform: scale(1.1);
+}
+
+/* CONTACT */
+#contact .form-control {
+    background-color: var(--color-base);
+    border-color: var(--color-base);
+    color: var(--color-body);
+    border-radius: 10px;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#contact .form-control:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0px 0px 10px rgba(255, 111, 97, 0.5);
+}
+
+#contact .form-control::placeholder {
+    color: var(--color-body);
+}
+
+#contact input.form-control {
+    height: 44px;
+}
+
+/* SOCIAL ICONS */
+.social-icons a {
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-base);
+    border-radius: 50px;
+    font-size: 24px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    background-color: var(--color-accent);
+    transform: rotate(15deg);
+}
+
+/* NEW FEATURES AND ENHANCEMENTS */
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0, 40px, 0);
+        opacity: 0;
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+.animate-up {
+    animation: fadeInUp 0.6s ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+/* Gradient Button */
+.btn-gradient {
+    background: linear-gradient(45deg, var(--color-accent), var(--color-accent-hover));
+    color: var(--color-base);
+    border: none;
+    transition: background 0.4s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(45deg, var(--color-accent-hover), var(--color-accent));
+    transform: translateY(-3px);
+}
+
+/* Hoverable Background */
+.hover-bg {
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.4s ease-in-out;
+}
+
+.hover-bg::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: var(--color-accent);
+    transition: transform 0.6s ease-in-out;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 0;
+    opacity: 0.5;
+}
+
+.hover-bg:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.hover-bg:hover {
+    color: var(--color-base);
+}
+
+/* Parallax Background */
+.parallax-bg {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
